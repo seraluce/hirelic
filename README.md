@@ -1,46 +1,113 @@
-# Astro Starter Kit: Basics
+# RELIC - 赛博朋克2077主题网站
 
-```sh
-npm create astro@latest -- --template basics
+> 「守护你的灵魂 · Secure Your Soul」
+>
+> — 荒坂公司 Relic 生物芯片项目
+
+## 📖 项目介绍
+
+这是一个关于《赛博朋克2077》的粉丝向中文网站，聚焦于游戏中的核心设定——**Relic 生物芯片**技术。
+
+Relic 芯片是荒坂公司开发的人格意识体生物芯片，能够将人类的思维特征、记忆和人格转化为数字代码，存储在生物芯片上，实现意识的数字化移植与永生。
+
+网站采用赛博朋克风格设计，使用扁平化线条和故障艺术效果，致敬游戏中荒坂公司的标志性视觉风格。
+
+## ✨ 网站特色
+
+- 🎨 **赛博朋克视觉风格** - 故障文字效果、黑客帝国代码雨背景
+- 🎯 **主色调** - 黄色 `#eee500` + 红色 `#d6192d`（荒坂公司配色）
+- 📱 **响应式设计** - 完美适配桌面端、平板和移动端
+- ⚡ **静态网站** - 基于 Astro 构建，加载速度快
+- 🧭 **完整导航** - 5个页面，内容丰富
+
+## 📄 页面结构
+
+| 页面 | 路径 | 内容 |
+|------|------|------|
+| **首页** | `/` | 英雄区域、Relic 介绍、技术规格、夜之城预览、传奇人物 |
+| **Relic 芯片** | `/relic` | 芯片详解、技术版本对比、工作原理、风险警告 |
+| **夜之城** | `/night-city` | 城市介绍、六大行政区、帮派势力、企业巨头 |
+| **角色** | `/characters` | 主要角色、荒坂家族、伙伴盟友、其他人物 |
+| **关于** | `/about` | 本站介绍、游戏信息、荒坂公司、免责声明 |
+
+## 🛠 技术栈
+
+- **框架**: Astro 7.x
+- **语言**: HTML5 / CSS3 / JavaScript
+- **样式**: 原生 CSS，CSS 变量主题系统
+- **动画**: CSS 动画 + Canvas 代码雨
+- **构建**: Vite
+
+## 🚀 快速开始
+
+### 安装依赖
+
+```bash
+npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### 启动开发服务器
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```bash
+npm run dev
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+访问 `http://localhost:4321` 预览网站
 
-## 🧞 Commands
+### 构建生产版本
 
-All commands are run from the root of the project, from a terminal:
+```bash
+npm run build
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+构建产物将输出到 `dist` 目录
 
-## 👀 Want to learn more?
+### 本地预览构建结果
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+npm run preview
+```
+
+## 📦 部署
+
+### Cloudflare Pages（推荐）
+
+1. 登录 Cloudflare Dashboard
+2. 进入 **Workers & Pages** → **Create application** → **Pages**
+3. 点击 **Connect to Git**，选择本仓库
+4. 构建设置：
+   - Framework preset: `Astro`
+   - Build command: `npm run build`
+   - Build output directory: `dist`
+5. 点击 **Save and Deploy**
+
+### 其他部署方式
+
+- Vercel
+- Netlify
+- GitHub Pages
+- 任何支持静态网站托管的服务
+
+## 🎮 关于游戏
+
+**《赛博朋克2077》** 是由波兰游戏公司 CD Projekt Red 开发的开放世界动作角色扮演游戏。
+
+- **开发商**: CD Projekt Red
+- **发行商**: CD Projekt
+- **发行日期**: 2020年12月10日
+- **游戏引擎**: REDengine 4
+- **游戏类型**: 动作角色扮演
+
+## ⚠️ 免责声明
+
+本站为粉丝向非官方网站，与 CD Projekt Red、荒坂公司（虚构）等无任何官方关联。
+
+所有游戏相关内容、角色设定、世界观等均归 CD Projekt Red 及原作者所有。
+
+本站内容仅供学习和交流使用，请勿用于商业用途。
+
+Relic 芯片技术为游戏虚构内容，现实中不存在相关技术。请勿模仿或尝试。
+
+---
+
+> 「在夜之城，你要么成为传奇，要么一事无成。」
