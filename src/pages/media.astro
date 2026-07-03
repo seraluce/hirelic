@@ -1,8 +1,1302 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// 添加类型声明
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+}
+
+const {
+  title = "RELIC | 赛博朋克2077",
+  description = "Relic生物芯片 - 打破生死界限的意识移植技术。荒坂公司荣誉出品，守护你的灵魂。",
+  image = "/og-image.png",
+  type = "website",
+}: Props = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <Layout
-	title="媒体资料 | 赛博朋克2077 - 人格意识体生物芯片"
-	description="音乐CD，原画，壁纸，漫画素材等信息."
+	title="媒体资料 | RELIC | 赛博朋克2077"
+	description="RELIC媒体资料库 - 音乐下载、壁纸下载、游戏截图、概念艺术。探索赛博朋克2077的视觉与听觉盛宴。"
 >
+	<!-- 页面标题 -->
+	<section class="page-header">
+		<div class="container">
+			<p class="page-tag">// 媒体资料库</p>
+			<h1 class="page-title glitch" data-text="MEDIA">MEDIA</h1>
+			<p class="page-subtitle">音乐 · 壁纸 · 截图 · 概念艺术</p>
+		</div>
+	</section>
+
+	<!-- 媒体分类导航 -->
+	<section class="section media-nav">
+		<div class="container">
+			<div class="nav-tabs" id="mediaTabs">
+				<button class="tab-btn active" data-tab="music">🎵 音乐</button>
+				<button class="tab-btn" data-tab="wallpaper">🖼️ 壁纸</button>
+				<button class="tab-btn" data-tab="screenshots">📸 截图</button>
+				<button class="tab-btn" data-tab="concept">🎨 概念艺术</button>
+			</div>
+		</div>
+	</section>
+
+	<!-- 音乐下载 -->
+	<section class="section media-content" id="music">
+		<div class="container">
+			<div class="section-header">
+				<h2 class="section-title">🎵 原声音乐</h2>
+				<p class="section-subtitle">// 赛博朋克2077 官方原声带</p>
+			</div>
+			<div class="media-grid music-grid">
+				<div class="media-card music-card">
+					<div class="music-art">
+						<span class="music-icon">♪</span>
+						<div class="music-play" data-song="relic-theme">
+							<span>▶</span>
+						</div>
+					</div>
+					<div class="music-info">
+						<h3 class="music-title">RELIC 主题曲</h3>
+						<p class="music-artist">荒坂交响乐团</p>
+						<div class="music-meta">
+							<span>3:42</span>
+							<span>FLAC 24bit</span>
+						</div>
+					</div>
+					<div class="music-actions">
+						<a href="#" class="btn-download">下载</a>
+					</div>
+				</div>
+
+				<div class="media-card music-card">
+					<div class="music-art">
+						<span class="music-icon">♫</span>
+						<div class="music-play" data-song="night-city">
+							<span>▶</span>
+						</div>
+					</div>
+					<div class="music-info">
+						<h3 class="music-title">夜之城霓虹</h3>
+						<p class="music-artist">Cyberpunk 2077 原声</p>
+						<div class="music-meta">
+							<span>5:18</span>
+							<span>FLAC 24bit</span>
+						</div>
+					</div>
+					<div class="music-actions">
+						<a href="#" class="btn-download">下载</a>
+					</div>
+				</div>
+
+				<div class="media-card music-card">
+					<div class="music-art">
+						<span class="music-icon">♩</span>
+						<div class="music-play" data-song="secure-soul">
+							<span>▶</span>
+						</div>
+					</div>
+					<div class="music-info">
+						<h3 class="music-title">Secure Your Soul</h3>
+						<p class="music-artist">Relic 宣传曲</p>
+						<div class="music-meta">
+							<span>4:05</span>
+							<span>FLAC 24bit</span>
+						</div>
+					</div>
+					<div class="music-actions">
+						<a href="#" class="btn-download">下载</a>
+					</div>
+				</div>
+
+				<div class="media-card music-card">
+					<div class="music-art">
+						<span class="music-icon">♪</span>
+						<div class="music-play" data-song="relic-theme">
+							<span>▶</span>
+						</div>
+					</div>
+					<div class="music-info">
+						<h3 class="music-title">RELIC 主题曲</h3>
+						<p class="music-artist">荒坂交响乐团</p>
+						<div class="music-meta">
+							<span>3:42</span>
+							<span>FLAC 24bit</span>
+						</div>
+					</div>
+					<div class="music-actions">
+						<a href="#" class="btn-download">下载</a>
+					</div>
+				</div>
+
+				<div class="media-card music-card">
+					<div class="music-art">
+						<span class="music-icon">♫</span>
+						<div class="music-play" data-song="night-city">
+							<span>▶</span>
+						</div>
+					</div>
+					<div class="music-info">
+						<h3 class="music-title">夜之城霓虹</h3>
+						<p class="music-artist">Cyberpunk 2077 原声</p>
+						<div class="music-meta">
+							<span>5:18</span>
+							<span>FLAC 24bit</span>
+						</div>
+					</div>
+					<div class="music-actions">
+						<a href="#" class="btn-download">下载</a>
+					</div>
+				</div>
+
+				<div class="media-card music-card">
+					<div class="music-art">
+						<span class="music-icon">♩</span>
+						<div class="music-play" data-song="secure-soul">
+							<span>▶</span>
+						</div>
+					</div>
+					<div class="music-info">
+						<h3 class="music-title">Secure Your Soul</h3>
+						<p class="music-artist">Relic 宣传曲</p>
+						<div class="music-meta">
+							<span>4:05</span>
+							<span>FLAC 24bit</span>
+						</div>
+					</div>
+					<div class="music-actions">
+						<a href="#" class="btn-download">下载</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 壁纸下载 -->
+	<section class="section media-content" id="wallpaper">
+		<div class="container">
+			<div class="section-header">
+				<h2 class="section-title">🖼️ 壁纸下载</h2>
+				<p class="section-subtitle">// 多种分辨率，完美适配你的设备</p>
+			</div>
+			<div class="media-grid wallpaper-grid">
+				<div class="media-card wallpaper-card">
+					<div class="wallpaper-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);">
+						<div class="wallpaper-overlay">
+							<span class="wallpaper-badge">4K</span>
+							<div class="wallpaper-icon">🖼️</div>
+							<p class="wallpaper-name">RELIC 芯片</p>
+						</div>
+					</div>
+					<div class="wallpaper-info">
+						<h3 class="wallpaper-title">RELIC 芯片 4K</h3>
+						<div class="wallpaper-meta">
+							<span>3840 × 2160</span>
+							<span>PNG 8.2MB</span>
+						</div>
+					</div>
+					<div class="wallpaper-actions">
+						<a href="#" class="btn-download">下载壁纸</a>
+					</div>
+				</div>
+
+				<div class="media-card wallpaper-card">
+					<div class="wallpaper-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);">
+						<div class="wallpaper-overlay">
+							<span class="wallpaper-badge">4K</span>
+							<div class="wallpaper-icon">🌃</div>
+							<p class="wallpaper-name">夜之城全景</p>
+						</div>
+					</div>
+					<div class="wallpaper-info">
+						<h3 class="wallpaper-title">夜之城全景 4K</h3>
+						<div class="wallpaper-meta">
+							<span>3840 × 2160</span>
+							<span>PNG 12.5MB</span>
+						</div>
+					</div>
+					<div class="wallpaper-actions">
+						<a href="#" class="btn-download">下载壁纸</a>
+					</div>
+				</div>
+
+				<div class="media-card wallpaper-card">
+					<div class="wallpaper-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);">
+						<div class="wallpaper-overlay">
+							<span class="wallpaper-badge">2K</span>
+							<div class="wallpaper-icon">🔮</div>
+							<p class="wallpaper-name">Relic 标志</p>
+						</div>
+					</div>
+					<div class="wallpaper-info">
+						<h3 class="wallpaper-title">Relic 标志 2K</h3>
+						<div class="wallpaper-meta">
+							<span>2560 × 1440</span>
+							<span>PNG 4.8MB</span>
+						</div>
+					</div>
+					<div class="wallpaper-actions">
+						<a href="#" class="btn-download">下载壁纸</a>
+					</div>
+				</div>
+
+				<div class="media-card wallpaper-card">
+					<div class="wallpaper-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);">
+						<div class="wallpaper-overlay">
+							<span class="wallpaper-badge">FHD</span>
+							<div class="wallpaper-icon">⚡</div>
+							<p class="wallpaper-name">强尼·银手</p>
+						</div>
+					</div>
+					<div class="wallpaper-info">
+						<h3 class="wallpaper-title">强尼·银手 FHD</h3>
+						<div class="wallpaper-meta">
+							<span>1920 × 1080</span>
+							<span>PNG 3.2MB</span>
+						</div>
+					</div>
+					<div class="wallpaper-actions">
+						<a href="#" class="btn-download">下载壁纸</a>
+					</div>
+				</div>
+
+				<div class="media-card wallpaper-card">
+					<div class="wallpaper-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);">
+						<div class="wallpaper-overlay">
+							<span class="wallpaper-badge">4K</span>
+							<div class="wallpaper-icon">🏙️</div>
+							<p class="wallpaper-name">沃森区夜景</p>
+						</div>
+					</div>
+					<div class="wallpaper-info">
+						<h3 class="wallpaper-title">沃森区夜景 4K</h3>
+						<div class="wallpaper-meta">
+							<span>3840 × 2160</span>
+							<span>PNG 15.6MB</span>
+						</div>
+					</div>
+					<div class="wallpaper-actions">
+						<a href="#" class="btn-download">下载壁纸</a>
+					</div>
+				</div>
+
+				<div class="media-card wallpaper-card">
+					<div class="wallpaper-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);">
+						<div class="wallpaper-overlay">
+							<span class="wallpaper-badge">FHD</span>
+							<div class="wallpaper-icon">🤖</div>
+							<p class="wallpaper-name">荒坂大楼</p>
+						</div>
+					</div>
+					<div class="wallpaper-info">
+						<h3 class="wallpaper-title">荒坂大楼 FHD</h3>
+						<div class="wallpaper-meta">
+							<span>1920 × 1080</span>
+							<span>PNG 4.1MB</span>
+						</div>
+					</div>
+					<div class="wallpaper-actions">
+						<a href="#" class="btn-download">下载壁纸</a>
+					</div>
+				</div>
+			</div>
+			<div class="load-more">
+				<button class="btn" id="loadMoreWallpapers">加载更多壁纸</button>
+			</div>
+		</div>
+	</section>
+
+	<!-- 截图 -->
+	<section class="section media-content" id="screenshots">
+		<div class="container">
+			<div class="section-header">
+				<h2 class="section-title">📸 游戏截图</h2>
+				<p class="section-subtitle">// 夜之城的每一个角落</p>
+			</div>
+			<div class="media-grid screenshot-grid">
+				<div class="media-card screenshot-card">
+					<div class="screenshot-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);">
+						<div class="screenshot-overlay">
+							<span class="screenshot-badge">📷</span>
+							<div class="screenshot-icon">🌆</div>
+						</div>
+					</div>
+					<div class="screenshot-info">
+						<h3 class="screenshot-title">夜之城天际线</h3>
+						<p class="screenshot-desc">从市政中心俯瞰整个夜之城</p>
+					</div>
+				</div>
+
+				<div class="media-card screenshot-card">
+					<div class="screenshot-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);">
+						<div class="screenshot-overlay">
+							<span class="screenshot-badge">📷</span>
+							<div class="screenshot-icon">🏪</div>
+						</div>
+					</div>
+					<div class="screenshot-info">
+						<h3 class="screenshot-title">沃森区街头</h3>
+						<p class="screenshot-desc">霓虹灯下的街头生活</p>
+					</div>
+				</div>
+
+				<div class="media-card screenshot-card">
+					<div class="screenshot-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);">
+						<div class="screenshot-overlay">
+							<span class="screenshot-badge">📷</span>
+							<div class="screenshot-icon">🏜️</div>
+						</div>
+					</div>
+					<div class="screenshot-info">
+						<h3 class="screenshot-title">恶土风光</h3>
+						<p class="screenshot-desc">夜之城边境的荒芜之地</p>
+					</div>
+				</div>
+
+				<div class="media-card screenshot-card">
+					<div class="screenshot-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);">
+						<div class="screenshot-overlay">
+							<span class="screenshot-badge">📷</span>
+							<div class="screenshot-icon">🏢</div>
+						</div>
+					</div>
+					<div class="screenshot-info">
+						<h3 class="screenshot-title">荒坂大厦</h3>
+						<p class="screenshot-desc">企业权力的象征</p>
+					</div>
+				</div>
+
+				<div class="media-card screenshot-card">
+					<div class="screenshot-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);">
+						<div class="screenshot-overlay">
+							<span class="screenshot-badge">📷</span>
+							<div class="screenshot-icon">🌃</div>
+						</div>
+					</div>
+					<div class="screenshot-info">
+						<h3 class="screenshot-title">太平洲夜景</h3>
+						<p class="screenshot-desc">被遗忘的娱乐天堂</p>
+					</div>
+				</div>
+
+				<div class="media-card screenshot-card">
+					<div class="screenshot-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);">
+						<div class="screenshot-overlay">
+							<span class="screenshot-badge">📷</span>
+							<div class="screenshot-icon">🚗</div>
+						</div>
+					</div>
+					<div class="screenshot-info">
+						<h3 class="screenshot-title">街头追逐</h3>
+						<p class="screenshot-desc">夜之城的高速追逐</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 概念艺术 -->
+	<section class="section media-content" id="concept">
+		<div class="container">
+			<div class="section-header">
+				<h2 class="section-title">🎨 概念艺术</h2>
+				<p class="section-subtitle">// 赛博朋克2077 早期设计</p>
+			</div>
+			<div class="media-grid concept-grid">
+				<div class="media-card concept-card">
+					<div class="concept-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);">
+						<div class="concept-overlay">
+							<span class="concept-badge">🎨</span>
+							<div class="concept-icon">👤</div>
+							<p class="concept-name">角色设计</p>
+						</div>
+					</div>
+					<div class="concept-info">
+						<h3 class="concept-title">主角概念设计</h3>
+						<p class="concept-desc">早期V的角色造型探索</p>
+						<span class="concept-tag">角色设计</span>
+					</div>
+				</div>
+
+				<div class="media-card concept-card">
+					<div class="concept-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);">
+						<div class="concept-overlay">
+							<span class="concept-badge">🎨</span>
+							<div class="concept-icon">🏙️</div>
+							<p class="concept-name">场景设计</p>
+						</div>
+					</div>
+					<div class="concept-info">
+						<h3 class="concept-title">夜之城早期概念</h3>
+						<p class="concept-desc">城市风格与建筑探索</p>
+						<span class="concept-tag">环境设计</span>
+					</div>
+				</div>
+
+				<div class="media-card concept-card">
+					<div class="concept-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);">
+						<div class="concept-overlay">
+							<span class="concept-badge">🎨</span>
+							<div class="concept-icon">🔧</div>
+							<p class="concept-name">武器设计</p>
+						</div>
+					</div>
+					<div class="concept-info">
+						<h3 class="concept-title">武器装备概念</h3>
+						<p class="concept-desc">赛博朋克武器风格</p>
+						<span class="concept-tag">武器设计</span>
+					</div>
+				</div>
+
+				<div class="media-card concept-card">
+					<div class="concept-preview" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);">
+						<div class="concept-overlay">
+							<span class="concept-badge">🎨</span>
+							<div class="concept-icon">💡</div>
+							<p class="concept-name">UI设计</p>
+						</div>
+					</div>
+					<div class="concept-info">
+						<h3 class="concept-title">用户界面设计</h3>
+						<p class="concept-desc">HUD与交互界面探索</p>
+						<span class="concept-tag">UI/UX设计</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 全部下载 -->
+	<section class="section download-all">
+		<div class="container">
+			<div class="cta-content">
+				<h2 class="cta-title glitch" data-text="下载所有媒体">下载所有媒体</h2>
+				<p class="cta-text">
+					一键下载全部媒体资源<br />
+					<span class="cta-warning">* 包含所有音乐、壁纸、截图和概念艺术</span>
+				</p>
+				<div class="download-all-actions">
+					<a href="#" class="btn btn-red">📦 下载全部 (4.2GB)</a>
+					<a href="#" class="btn">📋 查看资源列表</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 灯箱 -->
+	<div class="lightbox" id="lightbox">
+		<button class="lightbox-close" id="lightboxClose">✕</button>
+		<button class="lightbox-prev" id="lightboxPrev">‹</button>
+		<button class="lightbox-next" id="lightboxNext">›</button>
+		<img class="lightbox-image" id="lightboxImage" src="" alt="预览" />
+		<div class="lightbox-caption" id="lightboxCaption"></div>
+	</div>
+
+	<script>
+		// 音乐播放功能
+		document.querySelectorAll<HTMLDivElement>('.music-play').forEach((btn) => {
+			btn.addEventListener('click', function(this: HTMLDivElement) {
+				const song = this.dataset.song;
+				console.log(`播放歌曲: ${song}`);
+				this.innerHTML = '<span>⏸</span>';
+			});
+		});
+
+		// Tab切换功能
+		type MediaTabKey = 'music' | 'wallpaper' | 'screenshots' | 'concept';
+		const tabs = document.querySelectorAll<HTMLButtonElement>('.tab-btn');
+		const sections: Record<MediaTabKey, HTMLElement | null> = {
+			music: document.getElementById('music'),
+			wallpaper: document.getElementById('wallpaper'),
+			screenshots: document.getElementById('screenshots'),
+			concept: document.getElementById('concept')
+		};
+
+		// 默认显示音乐
+		(Object.keys(sections) as MediaTabKey[]).forEach((key) => {
+			const section = sections[key];
+			if (section && key !== 'music') {
+				section.style.display = 'none';
+			}
+		});
+
+		tabs.forEach((tab) => {
+			tab.addEventListener('click', function(this: HTMLButtonElement) {
+				tabs.forEach((t) => t.classList.remove('active'));
+				this.classList.add('active');
+
+				const tabId = this.dataset.tab as MediaTabKey | undefined;
+				(Object.keys(sections) as MediaTabKey[]).forEach((key) => {
+					const section = sections[key];
+					if (!section) return;
+					section.style.display = key === tabId ? 'block' : 'none';
+				});
+			});
+		});
+
+		// 加载更多壁纸
+		let wallpaperCount = 0;
+		document.getElementById('loadMoreWallpapers')?.addEventListener('click', function(this: HTMLElement) {
+			wallpaperCount += 6;
+			console.log(`加载 ${wallpaperCount} 张壁纸`);
+			this.textContent = '加载更多壁纸...';
+			setTimeout(() => {
+				this.textContent = '加载更多壁纸';
+			}, 1000);
+		});
+
+		// ========== 灯箱功能 ==========
+		const lightbox = document.getElementById('lightbox') as HTMLDivElement | null;
+		const lightboxImage = document.getElementById('lightboxImage') as HTMLImageElement | null;
+		const lightboxCaption = document.getElementById('lightboxCaption') as HTMLDivElement | null;
+		const lightboxClose = document.getElementById('lightboxClose') as HTMLButtonElement | null;
+		const lightboxPrev = document.getElementById('lightboxPrev') as HTMLButtonElement | null;
+		const lightboxNext = document.getElementById('lightboxNext') as HTMLButtonElement | null;
+
+		let currentImages: Array<{ title: string; icon: string }> = [];
+		let currentIndex = 0;
+
+		function initLightbox() {
+			if (!lightbox || !lightboxImage || !lightboxCaption || !lightboxClose || !lightboxPrev || !lightboxNext) {
+				return;
+			}
+
+			// 壁纸点击
+			document.querySelectorAll<HTMLElement>('.wallpaper-preview, .screenshot-preview, .concept-preview').forEach((el) => {
+				el.style.cursor = 'pointer';
+				el.addEventListener('click', function(this: HTMLElement, e: MouseEvent) {
+					e.stopPropagation();
+					const card = this.closest<HTMLElement>('.media-card');
+					const title = card?.querySelector<HTMLElement>('.wallpaper-title, .screenshot-title, .concept-title')?.textContent || '媒体预览';
+					const icon = this.querySelector<HTMLElement>('.wallpaper-icon, .screenshot-icon, .concept-icon')?.textContent || '🖼️';
+
+					const parentGrid = this.closest<HTMLElement>('.media-grid');
+					if (parentGrid) {
+						const allPreviews = parentGrid.querySelectorAll<HTMLElement>('.wallpaper-preview, .screenshot-preview, .concept-preview');
+						currentImages = Array.from(allPreviews).map((preview) => {
+							const card = preview.closest<HTMLElement>('.media-card');
+							const imgTitle = card?.querySelector<HTMLElement>('.wallpaper-title, .screenshot-title, .concept-title')?.textContent || '媒体预览';
+							const imgIcon = preview.querySelector<HTMLElement>('.wallpaper-icon, .screenshot-icon, .concept-icon')?.textContent || '🖼️';
+							return {
+								title: imgTitle,
+								icon: imgIcon
+							};
+						});
+						currentIndex = Array.from(allPreviews).indexOf(this);
+					} else {
+						currentImages = [{ title, icon }];
+						currentIndex = 0;
+					}
+
+					openLightbox(currentIndex);
+				});
+			});
+
+			// 截图和概念艺术的卡片本身也可点击
+			document.querySelectorAll<HTMLElement>('.screenshot-card, .concept-card').forEach((card) => {
+				card.style.cursor = 'pointer';
+				card.addEventListener('click', function(this: HTMLElement, e: MouseEvent) {
+					if ((e.target as HTMLElement).closest('.btn-download, .music-play, a')) return;
+					const preview = this.querySelector<HTMLElement>('.screenshot-preview, .concept-preview');
+					if (preview) {
+						preview.click();
+					}
+				});
+			});
+		}
+
+		function openLightbox(index: number) {
+			const item = currentImages[index];
+			if (!item || !lightbox || !lightboxImage || !lightboxCaption) return;
+	
+			const canvas = document.createElement('canvas');
+			canvas.width = 800;
+			canvas.height = 450;
+			const ctx = canvas.getContext('2d');
+			if (!ctx) return;
+	
+			const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+			gradient.addColorStop(0, '#0a0a0a');
+			gradient.addColorStop(0.5, '#1a1a1a');
+			gradient.addColorStop(1, '#2a2a2a');
+			ctx.fillStyle = gradient;
+			ctx.fillRect(0, 0, canvas.width, canvas.height);
+	
+			ctx.font = '120px sans-serif';
+			ctx.textAlign = 'center';
+			ctx.textBaseline = 'middle';
+			ctx.fillStyle = 'rgba(238, 229, 0, 0.15)';
+			ctx.fillText(item.icon || '🖼️', canvas.width / 2, canvas.height / 2 - 20);
+	
+			ctx.font = '24px "Courier New", monospace';
+			ctx.fillStyle = '#fcee0a';
+			ctx.textAlign = 'center';
+			ctx.textBaseline = 'bottom';
+			ctx.fillText(item.title || '媒体预览', canvas.width / 2, canvas.height - 40);
+	
+			ctx.strokeStyle = 'rgba(238, 229, 0, 0.3)';
+			ctx.lineWidth = 2;
+			ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
+	
+			lightboxImage.src = canvas.toDataURL('image/png');
+			lightboxCaption.textContent = item.title || '媒体预览';
+			lightbox.classList.add('active');
+			document.body.style.overflow = 'hidden';
+		}
+
+		function closeLightbox() {
+			if (!lightbox) return;
+			lightbox.classList.remove('active');
+			document.body.style.overflow = '';
+		}
+
+		function changeImage(direction: number) {
+			if (currentImages.length === 0) return;
+			currentIndex = (currentIndex + direction + currentImages.length) % currentImages.length;
+			openLightbox(currentIndex);
+		}
+
+		if (lightboxClose && lightboxPrev && lightboxNext && lightbox) {
+			lightboxClose.addEventListener('click', closeLightbox);
+			lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); changeImage(-1); });
+			lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); changeImage(1); });
+
+			lightbox.addEventListener('click', function(this: HTMLDivElement, e: MouseEvent) {
+				if (e.target === this) closeLightbox();
+			});
+		}
+
+		document.addEventListener('keydown', function(e: KeyboardEvent) {
+			if (!lightbox || !lightbox.classList.contains('active')) return;
+			if (e.key === 'Escape') closeLightbox();
+			if (e.key === 'ArrowLeft') changeImage(-1);
+			if (e.key === 'ArrowRight') changeImage(1);
+		});
+
+		document.addEventListener('DOMContentLoaded', initLightbox);
+	</script>
+</Layout>
+
+<style>
+	/* 页面头部 */
+	.page-header {
+		padding: 120px 0 60px;
+		text-align: center;
+		border-bottom: 1px solid rgba(238, 229, 0, 0.1);
+	}
+
+	.page-tag {
+		color: var(--primary-red);
+		font-size: 12px;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+	}
+
+	.page-title {
+		font-size: 80px;
+		font-weight: bold;
+		color: var(--primary-yellow);
+		letter-spacing: 20px;
+		line-height: 1;
+		margin-bottom: 10px;
+	}
+
+	.page-subtitle {
+		font-size: 18px;
+		color: var(--text-secondary);
+		letter-spacing: 6px;
+	}
+
+	/* Tab 导航 */
+	.media-nav {
+		padding: 40px 0;
+		background: rgba(26, 26, 26, 0.3);
+	}
+
+	.nav-tabs {
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+		flex-wrap: wrap;
+	}
+
+	.tab-btn {
+		padding: 12px 30px;
+		background: transparent;
+		border: 1px solid var(--dark-tertiary);
+		color: var(--text-secondary);
+		cursor: pointer;
+		font-family: 'Courier New', monospace;
+		font-size: 14px;
+		letter-spacing: 2px;
+		transition: all 0.3s ease;
+		text-transform: uppercase;
+	}
+
+	.tab-btn:hover {
+		border-color: var(--primary-yellow);
+		color: var(--primary-yellow);
+	}
+
+	.tab-btn.active {
+		background: var(--primary-yellow);
+		color: var(--dark-bg);
+		border-color: var(--primary-yellow);
+	}
+
+	/* 媒体网格 */
+	.media-grid {
+		display: grid;
+		gap: 30px;
+	}
+
+	.music-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.wallpaper-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.screenshot-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.concept-grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	/* 媒体卡片 */
+	.media-card {
+		background: rgba(26, 26, 26, 0.8);
+		border: 1px solid var(--dark-tertiary);
+		overflow: hidden;
+		transition: all 0.3s ease;
+	}
+
+	.media-card:hover {
+		border-color: var(--primary-yellow);
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px rgba(238, 229, 0, 0.1);
+	}
+
+	/* 音乐卡片 */
+	.music-card {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.music-art {
+		position: relative;
+		height: 150px;
+		background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+		border-bottom: 1px solid var(--dark-tertiary);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.music-icon {
+		font-size: 48px;
+		color: var(--primary-yellow);
+		opacity: 0.3;
+	}
+
+	.music-play {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 50px;
+		height: 50px;
+		background: var(--primary-yellow);
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		opacity: 0;
+		transition: all 0.3s ease;
+	}
+
+	.music-art:hover .music-play {
+		opacity: 1;
+	}
+
+	.music-play span {
+		color: var(--dark-bg);
+		font-size: 20px;
+	}
+
+	.music-info {
+		padding: 20px;
+		flex: 1;
+	}
+
+	.music-title {
+		font-size: 16px;
+		color: var(--text-primary);
+		margin-bottom: 5px;
+		letter-spacing: 1px;
+	}
+
+	.music-artist {
+		font-size: 12px;
+		color: var(--text-secondary);
+		margin-bottom: 10px;
+	}
+
+	.music-meta {
+		display: flex;
+		gap: 15px;
+		font-size: 11px;
+		color: var(--text-secondary);
+	}
+
+	.music-actions {
+		padding: 15px 20px;
+		border-top: 1px solid var(--dark-tertiary);
+	}
+
+	.btn-download {
+		display: inline-block;
+		padding: 6px 20px;
+		background: var(--primary-yellow);
+		color: var(--dark-bg);
+		text-decoration: none;
+		font-size: 11px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		transition: all 0.3s ease;
+	}
+
+	.btn-download:hover {
+		background: #ffffff;
+		transform: scale(1.05);
+	}
+
+	/* 壁纸卡片 */
+	.wallpaper-preview {
+		height: 200px;
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+	}
+
+	.wallpaper-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.6);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		transition: all 0.3s ease;
+	}
+
+	.wallpaper-card:hover .wallpaper-overlay {
+		background: rgba(0, 0, 0, 0.8);
+	}
+
+	.wallpaper-badge {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		padding: 4px 12px;
+		background: var(--primary-yellow);
+		color: var(--dark-bg);
+		font-size: 10px;
+		font-weight: bold;
+		letter-spacing: 1px;
+	}
+
+	.wallpaper-icon {
+		font-size: 48px;
+		margin-bottom: 10px;
+	}
+
+	.wallpaper-name {
+		font-size: 14px;
+		color: var(--text-primary);
+		letter-spacing: 2px;
+	}
+
+	.wallpaper-info {
+		padding: 15px 20px;
+	}
+
+	.wallpaper-title {
+		font-size: 14px;
+		color: var(--text-primary);
+		margin-bottom: 5px;
+		letter-spacing: 1px;
+	}
+
+	.wallpaper-meta {
+		display: flex;
+		gap: 15px;
+		font-size: 11px;
+		color: var(--text-secondary);
+	}
+
+	.wallpaper-actions {
+		padding: 15px 20px;
+		border-top: 1px solid var(--dark-tertiary);
+	}
+
+	/* 截图卡片 */
+	.screenshot-preview {
+		height: 180px;
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+	}
+
+	.screenshot-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: all 0.3s ease;
+	}
+
+	.screenshot-card:hover .screenshot-overlay {
+		background: rgba(0, 0, 0, 0.7);
+	}
+
+	.screenshot-badge {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		padding: 4px 12px;
+		background: var(--primary-red);
+		color: var(--dark-bg);
+		font-size: 10px;
+		font-weight: bold;
+		letter-spacing: 1px;
+	}
+
+	.screenshot-icon {
+		font-size: 48px;
+	}
+
+	.screenshot-info {
+		padding: 15px 20px;
+	}
+
+	.screenshot-title {
+		font-size: 14px;
+		color: var(--text-primary);
+		margin-bottom: 5px;
+		letter-spacing: 1px;
+	}
+
+	.screenshot-desc {
+		font-size: 12px;
+		color: var(--text-secondary);
+	}
+
+	/* 概念艺术卡片 */
+	.concept-preview {
+		height: 200px;
+		position: relative;
+		overflow: hidden;
+		cursor: pointer;
+	}
+
+	.concept-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.6);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		transition: all 0.3s ease;
+	}
+
+	.concept-card:hover .concept-overlay {
+		background: rgba(0, 0, 0, 0.8);
+	}
+
+	.concept-badge {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		padding: 4px 12px;
+		background: var(--primary-yellow);
+		color: var(--dark-bg);
+		font-size: 10px;
+		font-weight: bold;
+		letter-spacing: 1px;
+	}
+
+	.concept-icon {
+		font-size: 48px;
+		margin-bottom: 10px;
+	}
+
+	.concept-name {
+		font-size: 14px;
+		color: var(--text-primary);
+		letter-spacing: 2px;
+	}
+
+	.concept-info {
+		padding: 15px 20px;
+	}
+
+	.concept-title {
+		font-size: 14px;
+		color: var(--text-primary);
+		margin-bottom: 5px;
+		letter-spacing: 1px;
+	}
+
+	.concept-desc {
+		font-size: 12px;
+		color: var(--text-secondary);
+		margin-bottom: 10px;
+	}
+
+	.concept-tag {
+		display: inline-block;
+		padding: 2px 12px;
+		background: rgba(238, 229, 0, 0.1);
+		border: 1px solid rgba(238, 229, 0, 0.2);
+		font-size: 10px;
+		color: var(--primary-yellow);
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+
+	/* 加载更多 */
+	.load-more {
+		text-align: center;
+		margin-top: 40px;
+	}
+
+	/* 全部下载 */
+	.download-all {
+		background: linear-gradient(180deg, transparent 0%, rgba(214, 25, 45, 0.1) 100%);
+		padding: 80px 0;
+		text-align: center;
+	}
+
+	.download-all-actions {
+		display: flex;
+		gap: 20px;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	/* ========== 灯箱样式 ========== */
+	.lightbox {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.92);
+		z-index: 9999;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.lightbox.active {
+		display: flex;
+		animation: lightboxFadeIn 0.3s ease;
+	}
+
+	@keyframes lightboxFadeIn {
+		from {
+			opacity: 0;
+			transform: scale(0.95);
+		}
+		to {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
+	.lightbox-image {
+		max-width: 90%;
+		max-height: 80vh;
+		object-fit: contain;
+		border: 2px solid var(--primary-yellow);
+		box-shadow: 0 0 60px rgba(238, 229, 0, 0.15);
+	}
+
+	.lightbox-caption {
+		color: var(--primary-yellow);
+		font-size: 16px;
+		letter-spacing: 2px;
+		margin-top: 20px;
+		text-transform: uppercase;
+	}
+
+	.lightbox-close {
+		position: absolute;
+		top: 30px;
+		right: 40px;
+		background: transparent;
+		border: none;
+		color: var(--text-primary);
+		font-size: 36px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		z-index: 10;
+	}
+
+	.lightbox-close:hover {
+		color: var(--primary-yellow);
+		transform: rotate(90deg);
+	}
+
+	.lightbox-prev,
+	.lightbox-next {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: rgba(238, 229, 0, 0.1);
+		border: 1px solid rgba(238, 229, 0, 0.3);
+		color: var(--text-primary);
+		font-size: 40px;
+		width: 60px;
+		height: 60px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		z-index: 10;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.lightbox-prev:hover,
+	.lightbox-next:hover {
+		background: rgba(238, 229, 0, 0.2);
+		border-color: var(--primary-yellow);
+		color: var(--primary-yellow);
+	}
+
+	.lightbox-prev {
+		left: 30px;
+	}
+
+	.lightbox-next {
+		right: 30px;
+	}
+
+	/* 响应式 */
+	@media (max-width: 968px) {
+		.page-title {
+			font-size: 60px;
+			letter-spacing: 15px;
+		}
+
+		.music-grid,
+		.wallpaper-grid,
+		.screenshot-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.concept-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.nav-tabs {
+			gap: 10px;
+		}
+
+		.tab-btn {
+			padding: 10px 20px;
+			font-size: 12px;
+		}
+	}
+
+	@media (max-width: 576px) {
+		.page-title {
+			font-size: 40px;
+			letter-spacing: 10px;
+		}
+
+		.page-subtitle {
+			font-size: 14px;
+			letter-spacing: 4px;
+		}
+
+		.music-grid,
+		.wallpaper-grid,
+		.screenshot-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.concept-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.nav-tabs {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.tab-btn {
+			width: 100%;
+			max-width: 300px;
+			text-align: center;
+		}
+
+		.download-all-actions {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.cta-title {
+			font-size: 28px;
+		}
+
+		/* 灯箱响应式 */
+		.lightbox-prev,
+		.lightbox-next {
+			width: 40px;
+			height: 40px;
+			font-size: 24px;
+		}
+
+		.lightbox-prev {
+			left: 10px;
+		}
+
+		.lightbox-next {
+			right: 10px;
+		}
+
+		.lightbox-close {
+			top: 15px;
+			right: 20px;
+			font-size: 28px;
+		}
+
+		.lightbox-image {
+			max-width: 95%;
+			max-height: 70vh;
+		}
+	}
+</style>
