@@ -1,11 +1,718 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<!-- 英雄区域 -->
+	<section class="hero">
+		<div class="container">
+			<div class="hero-content">
+				<p class="hero-tag">// 荒坂公司 · 绝密项目</p>
+				<h1 class="hero-title glitch" data-text="RELIC">RELIC</h1>
+				<h2 class="hero-subtitle">人格意识体生物芯片</h2>
+				<p class="hero-description">
+					打破生死界限，将意识转化为数字代码<br />
+					守护你的灵魂，实现数字永生
+				</p>
+				<div class="hero-buttons">
+					<a href="/relic" class="btn">了解芯片</a>
+					<a href="/night-city" class="btn btn-red">探索夜之城</a>
+				</div>
+			</div>
+			<div class="hero-visual">
+				<div class="chip-container">
+					<div class="chip">
+						<div class="chip-inner">
+							<span class="chip-text">RELIC</span>
+							<span class="chip-sub">SOULCORE 1.0</span>
+						</div>
+						<div class="chip-glow"></div>
+					</div>
+					<div class="circuit-lines">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="scroll-indicator">
+			<span>SCROLL</span>
+			<div class="scroll-line"></div>
+		</div>
+	</section>
+
+	<!-- Relic 介绍 -->
+	<section class="section about-relic">
+		<div class="container">
+			<div class="section-header">
+				<h2 class="section-title glitch" data-text="什么是Relic">什么是Relic</h2>
+				<p class="section-subtitle">// 人格意识体生物芯片技术</p>
+			</div>
+			<div class="relic-grid">
+				<div class="card">
+					<div class="card-icon">◆</div>
+					<h3 class="card-title">意识数字化</h3>
+					<p class="card-text">
+						将人类的思维特征、记忆和人格转化为数字代码，
+						存储在生物芯片上，实现意识的永久保存。
+					</p>
+				</div>
+				<div class="card">
+					<div class="card-icon">◇</div>
+					<h3 class="card-title">生物植入</h3>
+					<p class="card-text">
+						通过神经接口植入人体，芯片能够与生物大脑融合，
+						逐步改写神经通路，实现意识转移。
+					</p>
+				</div>
+				<div class="card">
+					<div class="card-icon">○</div>
+					<h3 class="card-title">数字永生</h3>
+					<p class="card-text">
+						打破生死界限，让逝者的意识得以延续。
+						与逝去的亲人对话，仿佛他们从未离开。
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 技术参数 -->
+	<section class="section specs">
+		<div class="container">
+			<div class="section-header">
+				<h2 class="section-title glitch" data-text="技术规格">技术规格</h2>
+				<p class="section-subtitle">// SOULCORE 1.0 技术参数</p>
+			</div>
+			<div class="specs-grid">
+				<div class="spec-item">
+					<span class="spec-value">2.5PB</span>
+					<span class="spec-label">存储容量</span>
+				</div>
+				<div class="spec-item">
+					<span class="spec-value">0.3ms</span>
+					<span class="spec-label">神经响应</span>
+				</div>
+				<div class="spec-item">
+					<span class="spec-value">99.97%</span>
+					<span class="spec-label">意识保真度</span>
+				</div>
+				<div class="spec-item">
+					<span class="spec-value">∞</span>
+					<span class="spec-label">保存期限</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 夜之城预览 -->
+	<section class="section night-city">
+		<div class="container">
+			<div class="section-header">
+				<h2 class="section-title glitch" data-text="夜之城">夜之城</h2>
+				<p class="section-subtitle">// 梦想开始的地方</p>
+			</div>
+			<div class="city-content">
+				<div class="city-text">
+					<p>
+						夜之城，一座五光十色的超级大都会。权力更迭和身体改造是不变的主题。
+						这里诞生传奇，也吞噬灵魂。
+					</p>
+					<p>
+						从沃森区的贫民窟到市政中心的摩天大楼，
+						从太平洲的废弃乐园到恶土的荒芜边境，
+						每一个角落都藏着秘密和机遇。
+					</p>
+					<a href="/night-city" class="btn">探索城市</a>
+				</div>
+				<div class="city-districts">
+					<div class="district">
+						<span class="district-name">沃森区</span>
+						<span class="district-desc">移民与帮派</span>
+					</div>
+					<div class="district">
+						<span class="district-name">市政中心</span>
+						<span class="district-desc">企业权力核心</span>
+					</div>
+					<div class="district">
+						<span class="district-name">海伍德</span>
+						<span class="district-desc">瓦伦蒂诺帮</span>
+					</div>
+					<div class="district">
+						<span class="district-name">太平洲</span>
+						<span class="district-desc">被遗忘的乐园</span>
+					</div>
+					<div class="district">
+						<span class="district-name">圣多明戈</span>
+						<span class="district-desc">六街帮地盘</span>
+					</div>
+					<div class="district">
+						<span class="district-name">恶土</span>
+						<span class="district-desc">流浪者之家</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 角色预览 -->
+	<section class="section characters">
+		<div class="container">
+			<div class="section-header">
+				<h2 class="section-title glitch" data-text="传奇人物">传奇人物</h2>
+				<p class="section-subtitle">// 夜之城的风云人物</p>
+			</div>
+			<div class="char-grid">
+				<div class="char-card">
+					<div class="char-avatar">V</div>
+					<h3 class="char-name">V</h3>
+					<p class="char-role">雇佣兵</p>
+					<p class="char-desc">野心勃勃的雇佣兵，追寻永生的关键</p>
+				</div>
+				<div class="char-card">
+					<div class="char-avatar">JS</div>
+					<h3 class="char-name">强尼·银手</h3>
+					<p class="char-role">摇滚小子 / 恐怖分子</p>
+					<p class="char-desc">被封印在Relic芯片中的传奇摇滚明星</p>
+				</div>
+				<div class="char-card">
+					<div class="char-avatar">SA</div>
+					<h3 class="char-name">荒坂三郎</h3>
+					<p class="char-role">荒坂帝国缔造者</p>
+					<p class="char-desc">Relic技术的幕后推手，追求永生的帝王</p>
+				</div>
+			</div>
+			<div class="char-more">
+				<a href="/characters" class="btn">查看全部角色</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA 区域 -->
+	<section class="section cta">
+		<div class="container">
+			<div class="cta-content">
+				<h2 class="cta-title glitch" data-text="准备好接入了吗？">准备好接入了吗？</h2>
+				<p class="cta-text">
+					加入Relic计划，开启你的数字永生之旅<br />
+					<span class="cta-warning">* 意识移植可能导致人格覆盖，请谨慎选择</span>
+				</p>
+				<a href="/about" class="btn btn-red">了解更多</a>
+			</div>
+		</div>
+	</section>
 </Layout>
+
+<style>
+	/* 英雄区域 */
+	.hero {
+		min-height: calc(100vh - 70px);
+		display: flex;
+		align-items: center;
+		position: relative;
+		padding: 60px 0;
+	}
+
+	.hero .container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 60px;
+		align-items: center;
+	}
+
+	.hero-tag {
+		color: var(--primary-red);
+		font-size: 12px;
+		letter-spacing: 3px;
+		margin-bottom: 20px;
+		text-transform: uppercase;
+	}
+
+	.hero-title {
+		font-size: 120px;
+		font-weight: bold;
+		color: var(--primary-yellow);
+		letter-spacing: 20px;
+		line-height: 1;
+		margin-bottom: 10px;
+	}
+
+	.hero-subtitle {
+		font-size: 24px;
+		color: var(--text-primary);
+		letter-spacing: 8px;
+		margin-bottom: 30px;
+		font-weight: normal;
+	}
+
+	.hero-description {
+		color: var(--text-secondary);
+		font-size: 16px;
+		line-height: 1.8;
+		margin-bottom: 40px;
+	}
+
+	.hero-buttons {
+		display: flex;
+		gap: 20px;
+	}
+
+	/* 芯片视觉 */
+	.hero-visual {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.chip-container {
+		position: relative;
+		width: 300px;
+		height: 400px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.chip {
+		width: 200px;
+		height: 280px;
+		background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+		border: 2px solid var(--primary-yellow);
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		animation: chip-float 3s ease-in-out infinite;
+	}
+
+	.chip::before,
+	.chip::after {
+		content: '';
+		position: absolute;
+		width: 20px;
+		height: 30px;
+		background: var(--dark-tertiary);
+		border: 1px solid var(--primary-yellow);
+	}
+
+	.chip::before {
+		left: -25px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.chip::after {
+		right: -25px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.chip-inner {
+		text-align: center;
+	}
+
+	.chip-text {
+		display: block;
+		font-size: 32px;
+		font-weight: bold;
+		color: var(--primary-yellow);
+		letter-spacing: 8px;
+	}
+
+	.chip-sub {
+		display: block;
+		font-size: 10px;
+		color: var(--text-secondary);
+		letter-spacing: 2px;
+		margin-top: 10px;
+	}
+
+	.chip-glow {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 150px;
+		height: 150px;
+		background: radial-gradient(circle, rgba(238, 229, 0, 0.3) 0%, transparent 70%);
+		animation: glow-pulse 2s ease-in-out infinite;
+	}
+
+	@keyframes chip-float {
+		0%, 100% { transform: translateY(0); }
+		50% { transform: translateY(-20px); }
+	}
+
+	@keyframes glow-pulse {
+		0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+		50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+	}
+
+	.circuit-lines {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+	}
+
+	.circuit-lines span {
+		position: absolute;
+		background: var(--primary-yellow);
+		opacity: 0.3;
+	}
+
+	.circuit-lines span:nth-child(1) {
+		top: 20%;
+		left: 0;
+		width: 30%;
+		height: 1px;
+	}
+
+	.circuit-lines span:nth-child(2) {
+		top: 20%;
+		right: 0;
+		width: 30%;
+		height: 1px;
+	}
+
+	.circuit-lines span:nth-child(3) {
+		bottom: 20%;
+		left: 0;
+		width: 30%;
+		height: 1px;
+	}
+
+	.circuit-lines span:nth-child(4) {
+		bottom: 20%;
+		right: 0;
+		width: 30%;
+		height: 1px;
+	}
+
+	/* 滚动指示器 */
+	.scroll-indicator {
+		position: absolute;
+		bottom: 30px;
+		left: 50%;
+		transform: translateX(-50%);
+		text-align: center;
+	}
+
+	.scroll-indicator span {
+		display: block;
+		font-size: 10px;
+		color: var(--text-secondary);
+		letter-spacing: 3px;
+		margin-bottom: 10px;
+	}
+
+	.scroll-line {
+		width: 1px;
+		height: 40px;
+		background: linear-gradient(to bottom, var(--primary-yellow), transparent);
+		margin: 0 auto;
+		animation: scroll-line 2s ease-in-out infinite;
+	}
+
+	@keyframes scroll-line {
+		0%, 100% { opacity: 0.3; }
+		50% { opacity: 1; }
+	}
+
+	/* 通用区块 */
+	.section {
+		padding: 100px 0;
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: 60px;
+	}
+
+	/* Relic 介绍 */
+	.relic-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
+	}
+
+	.card-icon {
+		font-size: 40px;
+		color: var(--primary-yellow);
+		margin-bottom: 20px;
+	}
+
+	.card-title {
+		font-size: 20px;
+		color: var(--text-primary);
+		margin-bottom: 15px;
+		letter-spacing: 2px;
+	}
+
+	.card-text {
+		color: var(--text-secondary);
+		font-size: 14px;
+		line-height: 1.8;
+	}
+
+	/* 技术参数 */
+	.specs {
+		background: rgba(26, 26, 26, 0.5);
+	}
+
+	.specs-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 40px;
+		text-align: center;
+	}
+
+	.spec-item {
+		padding: 30px;
+		border: 1px solid var(--dark-tertiary);
+		position: relative;
+	}
+
+	.spec-item::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 30px;
+		height: 2px;
+		background: var(--primary-yellow);
+	}
+
+	.spec-value {
+		display: block;
+		font-size: 48px;
+		font-weight: bold;
+		color: var(--primary-yellow);
+		margin-bottom: 10px;
+		font-family: 'Courier New', monospace;
+	}
+
+	.spec-label {
+		display: block;
+		color: var(--text-secondary);
+		font-size: 12px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+
+	/* 夜之城 */
+	.city-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 60px;
+		align-items: start;
+	}
+
+	.city-text p {
+		color: var(--text-secondary);
+		font-size: 15px;
+		line-height: 1.8;
+		margin-bottom: 20px;
+	}
+
+	.city-text .btn {
+		margin-top: 20px;
+	}
+
+	.city-districts {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 15px;
+	}
+
+	.district {
+		padding: 20px;
+		background: rgba(26, 26, 26, 0.8);
+		border: 1px solid var(--dark-tertiary);
+		transition: all 0.3s ease;
+	}
+
+	.district:hover {
+		border-color: var(--primary-red);
+		background: rgba(214, 25, 45, 0.1);
+	}
+
+	.district-name {
+		display: block;
+		font-size: 16px;
+		color: var(--primary-yellow);
+		margin-bottom: 5px;
+		letter-spacing: 1px;
+	}
+
+	.district-desc {
+		display: block;
+		font-size: 12px;
+		color: var(--text-secondary);
+	}
+
+	/* 角色 */
+	.char-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
+		margin-bottom: 50px;
+	}
+
+	.char-card {
+		text-align: center;
+		padding: 40px 30px;
+		background: rgba(26, 26, 26, 0.8);
+		border: 1px solid var(--dark-tertiary);
+		transition: all 0.3s ease;
+	}
+
+	.char-card:hover {
+		border-color: var(--primary-yellow);
+		transform: translateY(-10px);
+	}
+
+	.char-avatar {
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		background: linear-gradient(135deg, var(--primary-yellow), var(--primary-red));
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto 20px;
+		font-size: 24px;
+		font-weight: bold;
+		color: var(--dark-bg);
+	}
+
+	.char-name {
+		font-size: 20px;
+		color: var(--text-primary);
+		margin-bottom: 5px;
+		letter-spacing: 2px;
+	}
+
+	.char-role {
+		font-size: 12px;
+		color: var(--primary-yellow);
+		letter-spacing: 1px;
+		margin-bottom: 15px;
+	}
+
+	.char-desc {
+		font-size: 13px;
+		color: var(--text-secondary);
+		line-height: 1.6;
+	}
+
+	.char-more {
+		text-align: center;
+	}
+
+	/* CTA */
+	.cta {
+		text-align: center;
+		background: linear-gradient(180deg, transparent 0%, rgba(214, 25, 45, 0.1) 100%);
+	}
+
+	.cta-title {
+		font-size: 48px;
+		color: var(--primary-yellow);
+		margin-bottom: 20px;
+		letter-spacing: 5px;
+	}
+
+	.cta-text {
+		color: var(--text-secondary);
+		font-size: 16px;
+		line-height: 1.8;
+		margin-bottom: 40px;
+	}
+
+	.cta-warning {
+		display: block;
+		font-size: 12px;
+		color: var(--primary-red);
+		margin-top: 10px;
+	}
+
+	/* 响应式 */
+	@media (max-width: 968px) {
+		.hero .container {
+			grid-template-columns: 1fr;
+			text-align: center;
+		}
+
+		.hero-title {
+			font-size: 80px;
+			letter-spacing: 15px;
+		}
+
+		.hero-buttons {
+			justify-content: center;
+		}
+
+		.hero-visual {
+			order: -1;
+		}
+
+		.chip-container {
+			width: 250px;
+			height: 350px;
+			margin: 0 auto;
+		}
+
+		.relic-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.specs-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.city-content {
+			grid-template-columns: 1fr;
+		}
+
+		.char-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.cta-title {
+			font-size: 32px;
+		}
+	}
+
+	@media (max-width: 576px) {
+		.hero-title {
+			font-size: 60px;
+			letter-spacing: 10px;
+		}
+
+		.hero-subtitle {
+			font-size: 18px;
+			letter-spacing: 4px;
+		}
+
+		.hero-buttons {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.specs-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.city-districts {
+			grid-template-columns: 1fr;
+		}
+
+		.section {
+			padding: 60px 0;
+		}
+	}
+</style>

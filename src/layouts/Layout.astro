@@ -1,23 +1,464 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>RELIC | 赛博朋克2077</title>
+		<meta name="description" content="Relic生物芯片 - 打破生死界限的意识移植技术" />
 	</head>
 	<body>
-		<slot />
+		<!-- 代码雨背景 -->
+		<canvas id="matrix-rain"></canvas>
+		
+		<!-- 导航栏 -->
+		<nav class="navbar">
+			<div class="nav-container">
+				<a href="/" class="logo">
+					<span class="logo-text glitch" data-text="RELIC">RELIC</span>
+				</a>
+				<ul class="nav-menu">
+					<li><a href="/" class={`nav-link ${Astro.url.pathname === '/' ? 'active' : ''}`}>首页</a></li>
+					<li><a href="/relic" class={`nav-link ${Astro.url.pathname.startsWith('/relic') ? 'active' : ''}`}>Relic芯片</a></li>
+					<li><a href="/night-city" class={`nav-link ${Astro.url.pathname.startsWith('/night-city') ? 'active' : ''}`}>夜之城</a></li>
+					<li><a href="/characters" class={`nav-link ${Astro.url.pathname.startsWith('/characters') ? 'active' : ''}`}>角色</a></li>
+					<li><a href="/about" class={`nav-link ${Astro.url.pathname.startsWith('/about') ? 'active' : ''}`}>关于</a></li>
+				</ul>
+				<div class="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</nav>
+
+		<!-- 主内容 -->
+		<main class="main-content">
+			<slot />
+		</main>
+
+		<!-- 页脚 -->
+		<footer class="footer">
+			<div class="footer-content">
+				<p class="footer-text">© 2077 RELIC BIOSYSTEMS | 荒坂公司荣誉出品</p>
+				<p class="footer-sub">守护你的灵魂 · Secure Your Soul</p>
+			</div>
+		</footer>
+
+		<script is:inline>
+			// 代码雨效果
+			const canvas = document.getElementById('matrix-rain');
+			const ctx = canvas.getContext('2d');
+			
+			function resizeCanvas() {
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight;
+			}
+			resizeCanvas();
+			window.addEventListener('resize', resizeCanvas);
+
+			const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+			const charArray = chars.split('');
+			const fontSize = 14;
+			let columns = canvas.width / fontSize;
+			let drops = [];
+
+			function initDrops() {
+				columns = Math.floor(canvas.width / fontSize);
+				drops = [];
+				for (let i = 0; i < columns; i++) {
+					drops[i] = Math.random() * -100;
+				}
+			}
+			initDrops();
+			window.addEventListener('resize', initDrops);
+
+			function draw() {
+				ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+				ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+				ctx.fillStyle = '#eee500';
+				ctx.font = fontSize + 'px monospace';
+
+				for (let i = 0; i < drops.length; i++) {
+					const text = charArray[Math.floor(Math.random() * charArray.length)];
+					ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+					if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+						drops[i] = 0;
+					}
+					drops[i]++;
+				}
+			}
+
+			setInterval(draw, 50);
+
+			// 移动端菜单
+			const hamburger = document.querySelector('.hamburger');
+			const navMenu = document.querySelector('.nav-menu');
+			
+			hamburger.addEventListener('click', () => {
+				hamburger.classList.toggle('active');
+				navMenu.classList.toggle('active');
+			});
+
+			// 点击导航链接关闭菜单
+			document.querySelectorAll('.nav-link').forEach(link => {
+				link.addEventListener('click', () => {
+					hamburger.classList.remove('active');
+					navMenu.classList.remove('active');
+				});
+			});
+		</script>
 	</body>
 </html>
 
-<style>
-	html,
-	body {
+<style is:global>
+	:root {
+		--primary-yellow: #eee500;
+		--primary-red: #d6192d;
+		--dark-bg: #0a0a0a;
+		--dark-secondary: #1a1a1a;
+		--dark-tertiary: #2a2a2a;
+		--text-primary: #ffffff;
+		--text-secondary: #aaaaaa;
+	}
+
+	* {
 		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-family: 'Courier New', monospace;
+		background-color: var(--dark-bg);
+		color: var(--text-primary);
+		line-height: 1.6;
+		overflow-x: hidden;
+	}
+
+	#matrix-rain {
+		position: fixed;
+		top: 0;
+		left: 0;
 		width: 100%;
 		height: 100%;
+		z-index: -1;
+		opacity: 0.15;
+	}
+
+	/* 导航栏 */
+	.navbar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1000;
+		background: rgba(10, 10, 10, 0.9);
+		backdrop-filter: blur(10px);
+		border-bottom: 1px solid var(--primary-yellow);
+	}
+
+	.nav-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 70px;
+	}
+
+	.logo {
+		text-decoration: none;
+	}
+
+	.logo-text {
+		font-size: 28px;
+		font-weight: bold;
+		color: var(--primary-yellow);
+		letter-spacing: 4px;
+	}
+
+	.nav-menu {
+		display: flex;
+		list-style: none;
+		gap: 30px;
+	}
+
+	.nav-link {
+		color: var(--text-secondary);
+		text-decoration: none;
+		font-size: 14px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		position: relative;
+		transition: color 0.3s ease;
+	}
+
+	.nav-link:hover,
+	.nav-link.active {
+		color: var(--primary-yellow);
+	}
+
+	.nav-link::after {
+		content: '';
+		position: absolute;
+		bottom: -5px;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background: var(--primary-red);
+		transition: width 0.3s ease;
+	}
+
+	.nav-link:hover::after,
+	.nav-link.active::after {
+		width: 100%;
+	}
+
+	.hamburger {
+		display: none;
+		flex-direction: column;
+		cursor: pointer;
+		gap: 5px;
+	}
+
+	.hamburger span {
+		width: 25px;
+		height: 2px;
+		background: var(--primary-yellow);
+		transition: all 0.3s ease;
+	}
+
+	.hamburger.active span:nth-child(1) {
+		transform: rotate(45deg) translate(5px, 5px);
+	}
+
+	.hamburger.active span:nth-child(2) {
+		opacity: 0;
+	}
+
+	.hamburger.active span:nth-child(3) {
+		transform: rotate(-45deg) translate(5px, -5px);
+	}
+
+	/* 主内容 */
+	.main-content {
+		min-height: 100vh;
+		padding-top: 70px;
+	}
+
+	/* 故障文字效果 */
+	.glitch {
+		position: relative;
+		display: inline-block;
+	}
+
+	.glitch::before,
+	.glitch::after {
+		content: attr(data-text);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.glitch::before {
+		color: var(--primary-red);
+		animation: glitch-1 2s infinite linear alternate-reverse;
+		clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+	}
+
+	.glitch::after {
+		color: var(--primary-yellow);
+		animation: glitch-2 3s infinite linear alternate-reverse;
+		clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+	}
+
+	@keyframes glitch-1 {
+		0%, 100% { transform: translate(0); }
+		20% { transform: translate(-2px, 2px); }
+		40% { transform: translate(-2px, -2px); }
+		60% { transform: translate(2px, 2px); }
+		80% { transform: translate(2px, -2px); }
+	}
+
+	@keyframes glitch-2 {
+		0%, 100% { transform: translate(0); }
+		20% { transform: translate(2px, -2px); }
+		40% { transform: translate(2px, 2px); }
+		60% { transform: translate(-2px, -2px); }
+		80% { transform: translate(-2px, 2px); }
+	}
+
+	/* 页脚 */
+	.footer {
+		background: rgba(10, 10, 10, 0.95);
+		border-top: 1px solid var(--primary-yellow);
+		padding: 30px 20px;
+		text-align: center;
+	}
+
+	.footer-text {
+		color: var(--primary-yellow);
+		font-size: 14px;
+		letter-spacing: 2px;
+		margin-bottom: 5px;
+	}
+
+	.footer-sub {
+		color: var(--text-secondary);
+		font-size: 12px;
+		letter-spacing: 1px;
+	}
+
+	/* 容器 */
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
+	/* 卡片样式 */
+	.card {
+		background: rgba(26, 26, 26, 0.8);
+		border: 1px solid var(--dark-tertiary);
+		padding: 30px;
+		transition: all 0.3s ease;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 3px;
+		height: 0;
+		background: var(--primary-yellow);
+		transition: height 0.3s ease;
+	}
+
+	.card:hover {
+		border-color: var(--primary-yellow);
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px rgba(238, 229, 0, 0.1);
+	}
+
+	.card:hover::before {
+		height: 100%;
+	}
+
+	/* 标题样式 */
+	.section-title {
+		font-size: 36px;
+		color: var(--primary-yellow);
+		margin-bottom: 10px;
+		letter-spacing: 3px;
+		text-transform: uppercase;
+	}
+
+	.section-subtitle {
+		color: var(--text-secondary);
+		font-size: 14px;
+		letter-spacing: 2px;
+		margin-bottom: 40px;
+	}
+
+	/* 按钮样式 */
+	.btn {
+		display: inline-block;
+		padding: 12px 30px;
+		background: transparent;
+		border: 2px solid var(--primary-yellow);
+		color: var(--primary-yellow);
+		text-decoration: none;
+		font-size: 14px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		transition: all 0.3s ease;
+		cursor: pointer;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.btn::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: var(--primary-yellow);
+		transition: left 0.3s ease;
+		z-index: -1;
+	}
+
+	.btn:hover {
+		color: var(--dark-bg);
+	}
+
+	.btn:hover::before {
+		left: 0;
+	}
+
+	.btn-red {
+		border-color: var(--primary-red);
+		color: var(--primary-red);
+	}
+
+	.btn-red::before {
+		background: var(--primary-red);
+	}
+
+	.btn-red:hover {
+		color: var(--text-primary);
+	}
+
+	/* 响应式 */
+	@media (max-width: 768px) {
+		.nav-menu {
+			position: fixed;
+			top: 70px;
+			left: -100%;
+			width: 100%;
+			height: calc(100vh - 70px);
+			background: rgba(10, 10, 10, 0.98);
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 40px;
+			transition: left 0.3s ease;
+		}
+
+		.nav-menu.active {
+			left: 0;
+		}
+
+		.nav-link {
+			font-size: 18px;
+		}
+
+		.hamburger {
+			display: flex;
+		}
+
+		.section-title {
+			font-size: 28px;
+		}
+
+		.logo-text {
+			font-size: 22px;
+		}
 	}
 </style>
