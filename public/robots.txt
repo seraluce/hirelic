@@ -1,0 +1,9 @@
+# RELIC - 赛博朋克2077主题网站
+# https://hirelic.pages.dev
+
+User-agent: *
+Allow: /
+
+# 网站地图
+Sitemap: https://hirelic.pages.dev/sitemap-index.xml
+Sitemap: https://hirelic.pages.dev/sitemap-0.xml
