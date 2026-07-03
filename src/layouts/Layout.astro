@@ -88,26 +88,28 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 		<canvas id="matrix-rain"></canvas>
 		
 		<!-- 导航栏 -->
-		<nav class="navbar">
-			<div class="nav-container">
-				<a href="/" class="logo">
-					<img src="https://forums.cdprojektred.com/styles/cyberpunk/logo.png">
-				</a>
-				<ul class="nav-menu">
-					<li><a href="/" class={`nav-link ${Astro.url.pathname === '/' ? 'active' : ''}`}>首页</a></li>
-					<li><a href="/relic" class={`nav-link ${Astro.url.pathname.startsWith('/relic') ? 'active' : ''}`}>Relic芯片</a></li>
-					<li><a href="/night-city" class={`nav-link ${Astro.url.pathname.startsWith('/night-city') ? 'active' : ''}`}>夜之城</a></li>
-					<li><a href="/characters" class={`nav-link ${Astro.url.pathname.startsWith('/characters') ? 'active' : ''}`}>角色</a></li>
-					<li><a href="/media" class={`nav-link ${Astro.url.pathname.startsWith('/characters') ? 'active' : ''}`}>媒体资料</a></li>
-					<li><a href="/about" class={`nav-link ${Astro.url.pathname.startsWith('/about') ? 'active' : ''}`}>关于</a></li>
-				</ul>
-				<div class="hamburger">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-			</div>
-		</nav>
+<nav class="navbar">
+	<div class="nav-container">
+		<a href="/" class="logo">
+			<img src="https://forums.cdprojektred.com/styles/cyberpunk/logo.png">
+		</a>
+		<ul class="nav-menu">
+			<li><a href="/" class={`nav-link ${Astro.url.pathname === '/' ? 'active' : ''}`}>首页</a></li>
+			<li><a href="/relic" class={`nav-link ${Astro.url.pathname.startsWith('/relic') ? 'active' : ''}`}>Relic芯片</a></li>
+			<li><a href="/night-city" class={`nav-link ${Astro.url.pathname.startsWith('/night-city') ? 'active' : ''}`}>夜之城</a></li>
+			<li><a href="/characters" class={`nav-link ${Astro.url.pathname.startsWith('/characters') ? 'active' : ''}`}>角色</a></li>
+			<li><a href="/media" class={`nav-link ${Astro.url.pathname.startsWith('/media') ? 'active' : ''}`}>媒体资料</a></li>
+			<li><a href="/about" class={`nav-link ${Astro.url.pathname.startsWith('/about') ? 'active' : ''}`}>关于</a></li>
+		</ul>
+		<!-- 添加按钮 -->
+		<a href="/secure" class="nav-cta">Secure Your Soul</a>
+		<div class="hamburger">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+</nav>
 
 		<!-- 主内容 -->
 		<main class="main-content">
@@ -299,6 +301,71 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 		width: 100%;
 	}
 
+	/* CTA 按钮 - 右下角缺角 */
+.nav-cta {
+	display: inline-block;
+	padding: 8px 20px 8px 24px;
+	background: var(--primary-yellow);
+	color: var(--dark-bg);
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: 'Courier New', monospace;
+	transition: all 0.3s ease;
+	position: relative;
+	/* 右下角缺角 - 使用 clip-path */
+	clip-path: polygon(0 0, 100% 0, 100% 70%, 90% 100%, 0 100%);
+}
+
+.nav-cta:hover {
+	background: #fff;
+	transform: scale(1.05);
+	box-shadow: 0 0 30px rgba(238, 229, 0, 0.4);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+	.nav-menu {
+		position: fixed;
+		top: 70px;
+		left: -100%;
+		width: 100%;
+		height: calc(100vh - 70px);
+		background: rgba(10, 10, 10, 0.98);
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 40px;
+		transition: left 0.3s ease;
+	}
+
+	.nav-menu.active {
+		left: 0;
+	}
+
+	.nav-link {
+		font-size: 18px;
+	}
+
+	.hamburger {
+		display: flex;
+	}
+
+	.section-title {
+		font-size: 28px;
+	}
+
+	.logo-text {
+		font-size: 22px;
+	}
+
+	.nav-cta {
+		font-size: 10px;
+		padding: 6px 14px 6px 18px;
+	}
+}
 	.hamburger {
 		display: none;
 		flex-direction: column;
